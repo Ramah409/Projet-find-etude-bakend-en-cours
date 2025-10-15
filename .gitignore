@@ -1,0 +1,15 @@
+target/
+*.log
+*.iml
+.idea/
+.project
+.classpath
+.settings/
+.DS_Store
+.mvn/wrapper/maven-wrapper.jar
+
+# Envs / secrets (NE PAS pousser de secrets)
+.env
+*.env
+src/main/resources/application-*.properties
+src/main/resources/application-*.yml
