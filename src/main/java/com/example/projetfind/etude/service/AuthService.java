@@ -105,7 +105,7 @@ if (!encoder.matches(req.password, nouvelutilisateur.getPasswordHash())) {
 // ✅ ADMIN si username == "admin" OU si l'email est demba@gmail.com
 String role = (
     "admin".equalsIgnoreCase(nouvelutilisateur.getUsername())
-    || "demba@gmail.com".equalsIgnoreCase(nouvelutilisateur.getEmail())
+    || "ramahsissoko@gmail.com".equalsIgnoreCase(nouvelutilisateur.getEmail())
 ) ? "ADMIN" : "USER";
 
 

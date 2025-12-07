@@ -2,25 +2,25 @@
 // et à vérifier le token via JwtService pour "connecter" l'utilisateur côté Spring Security
 package com.example.projetfind.etude.security;
 
-// ------ Imports utiles ------
-import java.io.IOException; // pour la signature de doFilterInternal
 
-import java.util.List;      // pour créer une liste d'autorisations (rôles)
+import java.io.IOException; 
 
-// ⚠️ HttpHeaders : on prend celui de Spring, pas java.net.http
+import java.util.List;      
+
+
 import org.springframework.http.HttpHeaders;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken; // objet Authentication simple
 import org.springframework.security.core.authority.SimpleGrantedAuthority;            // représentation d'un rôle (ROLE_*)
 import org.springframework.security.core.context.SecurityContextHolder;              // où l'on pose l'Authentication
 
-// Filtre exécuté une fois par requête
+
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import org.springframework.lang.NonNull;
 
 
-// ⚠️ StringUtils : on prend celui de Spring (org.springframework.util), pas Micrometer
+
 import org.springframework.util.StringUtils;
 
 // API Servlet pour filtrer une requête HTTP
@@ -29,15 +29,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * JwtAuthFilter :
- * - lit l'entête "Authorization: Bearer <token>"
- * - si présent → vérifie et extrait le username/role via JwtService
- * - pose une Authentication dans le SecurityContext pour le reste du traitement
- */
+/** JwtAuthFilter : lit l'entête "Authorization: Bearer token si présent → vérifie et extrait le username/role via JwtService */
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-    // Référence vers NOTRE service qui fabrique/lit les JWT
+    // Référence vers mon service qui fabrique/lit les JWT
     private final JwtService jwt;
 
     // je l'injecte via le contructeur depuis SecurityConfig

@@ -16,8 +16,8 @@ public class CorsConfig implements WebMvcConfigurer{
     public void addCorsMappings(@NonNull CorsRegistry registry){
         // toutes les routes qui commence par /api/ (metier)
         registry.addMapping("/api/**")
-               // pour autoriser uniquement angular
-                .allowedOrigins("http://localhost:4200")
+               // pour autoriser uniquement angular en local et internet en gros deployer netlify
+                .allowedOrigins("http://localhost:4200", "https://soramtfr-projet.netlify.app")
                 // les methodes autoriser
                 .allowedMethods("GET","POST","PUT", "DELETE", "OPTIONS")
                 // pour autoriser tous les header HTTP
@@ -30,8 +30,8 @@ public class CorsConfig implements WebMvcConfigurer{
 
          // mes routes d'authentification genre se connecter ou crée un compte (register et login) AVEC le /api devant
     registry.addMapping("/api//auth/**")
-    // l'autorisation sur la partie front
-    .allowedOrigins("http://localhost:4200")
+    // l'autorisation sur la partie front en local et sur netlify
+    .allowedOrigins("http://localhost:4200", "https://soramfr-projet.netlify.app")
     // les methodes http
     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
     .allowedHeaders("Authorization", "Content-Type", "Accept", "Origin", "X-Requested-With")

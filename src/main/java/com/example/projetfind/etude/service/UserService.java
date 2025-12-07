@@ -2,12 +2,12 @@
 // et utilise UserRepository pour accéder à la base.
 package com.example.projetfind.etude.service;
 
-import com.example.projetfind.etude.dto.UserDto;         // Forme échangée par l’API
-import com.example.projetfind.etude.entity.UserEntity;   // Table "users"
-import com.example.projetfind.etude.repository.UserRepository; // Accès BD
+import com.example.projetfind.etude.dto.UserDto;         
+import com.example.projetfind.etude.entity.UserEntity;   
+import com.example.projetfind.etude.repository.UserRepository; 
 
-import jakarta.persistence.EntityNotFoundException;      // Pour 404
-import jakarta.validation.ValidationException;           // Pour 400
+import jakarta.persistence.EntityNotFoundException;      
+import jakarta.validation.ValidationException;           
 
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 /**
  * SERVICE = logique métier.
- * - Convertit Entity <-> DTO
+ * - Convertit Entity  DTO
  * - Vérifie les règles (champ requis, unicité)
  * - Appelle le repository
  */
@@ -31,7 +31,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    /* ================== Helpers de conversion ================== */
+    /*  Helpers de conversion */
 
     // Entité -> DTO (pour répondre côté API)
     private UserDto toDto(UserEntity e) {
@@ -47,7 +47,7 @@ public class UserService {
         return e;
     }
 
-    /* ============================ CRUD ============================ */
+    /*CRUD */
 
     // Lire tous les utilisateurs
     public List<UserDto> getAll() {
