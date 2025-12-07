@@ -17,6 +17,7 @@ public class CorsConfig implements WebMvcConfigurer{
         // toutes les routes qui commence par /api/ (metier)
         registry.addMapping("/api/**")
                // pour autoriser uniquement angular en local et internet en gros deployer netlify
+               // Sans cette ligne, le navigateur bloque les requêtes (erreur CORS).
                 .allowedOrigins("http://localhost:4200", "https://soramtfr-projet.netlify.app")
                 // les methodes autoriser
                 .allowedMethods("GET","POST","PUT", "DELETE", "OPTIONS")
