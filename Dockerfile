@@ -17,4 +17,4 @@ RUN ./mvnw clean package -DskipTests
 EXPOSE 8080
 
 # pour lancer jar spring boot 
-CMD ["java", "-jar", "target/mon-app.jar"]
+CMD ["java", "-jar", "/app/target/mon-app.jar"]
