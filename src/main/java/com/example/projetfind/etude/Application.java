@@ -1,3 +1,4 @@
+// point de demarrage de l'application genre qui lance le bakend
 package com.example.projetfind.etude;
 
 import org.springframework.boot.SpringApplication;

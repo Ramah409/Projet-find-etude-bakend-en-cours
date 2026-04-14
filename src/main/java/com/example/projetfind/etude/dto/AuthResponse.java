@@ -1,4 +1,5 @@
 // ce que mon baken envoie au frontend genre apres inscription et connexion
+// renvoie les infos utilisateur et le token
 
 package com.example.projetfind.etude.dto;
 

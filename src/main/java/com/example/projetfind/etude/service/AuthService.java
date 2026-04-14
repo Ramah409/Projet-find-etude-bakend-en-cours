@@ -97,12 +97,13 @@ if (!encoder.matches(req.password, nouvelutilisateur.getPasswordHash())) {
 
 // concernant le token
 // pour determiner le role logique coté app 
+
+// code qui me posait probleme 
 //String role = "admin".equalsIgnoreCase(nouvelutilisateur.getUsername()) ? "ADMIN": "USER";
 
-// Rôle déterminé sans champ en base : admin si username = "admin" OU si email est whitelisté
+// Rôle déterminé sans champ en base : admin si username = "admin" OU si email est ajouté à une liste d’autorisations
 
-
-// ✅ ADMIN si username == "admin" OU si l'email est demba@gmail.com
+//  ADMIN si username == "admin" OU si l'email est demba@gmail.com
 String role = (
     "admin".equalsIgnoreCase(nouvelutilisateur.getUsername())
     || "ramahsissoko@gmail.com".equalsIgnoreCase(nouvelutilisateur.getEmail())

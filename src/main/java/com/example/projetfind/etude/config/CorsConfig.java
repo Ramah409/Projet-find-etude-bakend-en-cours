@@ -1,4 +1,5 @@
-// ce fichier me sert a autoriser le front angular
+// ce fichier me sert a autoriser le front angular et me sert a definir les regles generales 
+// de fonctionnement de mon application
 
 package com.example.projetfind.etude.config;
 

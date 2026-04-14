@@ -1,3 +1,4 @@
+// la porte d’entrée de l’API.
 package com.example.projetfind.etude.controller;
 
 import org.springframework.http.HttpStatus;
