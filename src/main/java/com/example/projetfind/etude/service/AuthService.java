@@ -49,8 +49,8 @@ public class AuthService {
             throw new ValidationException("Email obligatoire");
         if (req.username == null || req.username.isBlank())
             throw new ValidationException("Pseudo obligatoire");
-        if (req.password == null || req.password.length() < 6)
-           throw new ValidationException("Mots de passe 6 caractére");
+        if (req.password == null || req.password.length() < 8)
+           throw new ValidationException("Mot de passe minimum 8 caractères");
 
          // vérification des champs pour éviter des doublons
         if (userRepository.existsByEmail(req.email))
